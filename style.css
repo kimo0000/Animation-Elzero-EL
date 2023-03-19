@@ -1,0 +1,184 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+   width: 450px;
+   height: 350px;
+   margin: 50px auto;
+   display: flex;
+   gap: 15px;
+   border: 1px solid #ddd;
+}
+
+.container .e {
+    width: 50%;
+    height: 100%;
+    display: grid;
+    grid-template: repeat(7, 1fr) / repeat(3, 1fr);
+}
+
+.e, .l {
+    position: relative;
+}
+
+.e div,
+.l div {
+    background-color: #000;
+}
+
+.e .one {
+    grid-area: 1 / 1 / 1 / span3;
+}
+.e .two {
+    grid-area: 2 / 1 / span2 / 1;
+}
+.e .three {
+    grid-area: 4 / 1 / 5 / span3;
+}
+.e .four {
+    grid-area: 5 / 1 / span2 / 1;
+}
+.e .five {
+    grid-area: 7 / 1 / 8 / span3;
+}
+
+.e::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+    top: 10px;
+    left: 180px;
+    animation-name: move_one;
+    animation-duration: 6s;
+    animation-delay: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: backwards;
+}
+
+@keyframes move_one {
+    0% {
+        top: 10px;
+        left: 180px;
+        opacity: 1;
+    }
+    10% {
+        top: 10px;
+        left: 20px;
+    }
+    15% {
+        top: 160px;
+        left: 20px;
+    }
+    20% {
+        top: 160px;
+        left: 180px;
+    }
+    25% {
+        top: 160px;
+        left: 20px;
+    }
+    30% {
+        top: 310px;
+        left: 20px
+    }
+    35% {
+        top: 310px;
+        left: 180px;
+    }
+    40% {
+        top: 310px;
+        left: 20px;
+    }
+    45% {
+        top: 10px;
+        left: 20px;
+    }
+    50% {
+        top: 10px;
+        left: 180px;
+    }
+}
+
+.container .l {
+    width: 50%;
+    height: 100%;
+    display: grid;
+    grid-template: repeat(7, 1fr) / repeat(3, 1fr);
+}
+
+.l .first {
+    grid-area: 1 / 1 / span7 / 1;
+}
+
+.l .second {
+    grid-area: 7 / 1 / 8 / span3;
+}
+
+.l::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+    bottom: 10px;
+    left: 180px;
+    animation-name: move_tow;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes move_tow {
+    0% {
+        bottom: 10px;
+        left: 180px;
+        opacity: 1;
+    }
+    15% {
+        bottom: 10px;
+        left: 20px;
+    }
+    30% {
+        bottom: 310px;
+        left: 20px;
+        opacity: 1;
+    }
+    45% {
+        opacity: 0;
+    }
+    100% {
+        bottom: 310px;
+        left: 20px;
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
